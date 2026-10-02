@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+/* Palette: forest green, olive, cream, rust orange, amber. */
+@theme {
+  --color-ink: #1d1c18;
+  --color-ink-soft: #5c5646;
+  --color-forest: #2f3d2b;
+  --color-forest-deep: #263223;
+  --color-olive: #5c5c38;
+  --color-paper: #f6ecd9;
+  --color-card: #fcf6ea;
+  --color-chip: #efe2c6;
+  --color-line: #e2d4b8;
+  --color-line-strong: #c9b891;
+  --color-accent: #c94a22;
+  --color-accent-soft: #f8dcc6;
+  --color-amber: #f4a81d;
+  --color-hire: #2f6b34;
+  --color-hire-soft: #dfe8cc;
+  --color-on-accent: #ffffff;
+  --color-accent-hover: #b03f1b;
+  --color-amber-hover: #e59a10;
+  --color-field: #fffaf0;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces Variable", Georgia, "Times New Roman", serif;
+}
+
+/* ── Colour options ─────────────────────────────────────────────
+   Pick one in src/lib/config.ts (SITE.theme). "forest" is the default above. */
+[data-theme="sky"] {        /* Sky & Espresso */
+  --color-ink: #2a1711; --color-ink-soft: #6b574c; --color-forest: #3a2119; --color-forest-deep: #2a1711; --color-olive: #7a5f4f;
+  --color-paper: #fff9f0; --color-card: #ffffff; --color-chip: #d2e2ec; --color-line: #dbe5ec; --color-line-strong: #a0beda;
+  --color-accent: #a4472a; --color-accent-hover: #8c3a21; --color-on-accent: #ffffff; --color-accent-soft: #f6e3d3;
+  --color-amber: #a0beda; --color-amber-hover: #8db0d0; --color-field: #ffffff; --color-hire: #2f6b34; --color-hire-soft: #e1ecd8;
+}
+[data-theme="plum"] {       /* Plum Dusk */
+  --color-ink: #190019; --color-ink-soft: #5e3f57; --color-forest: #2b124c; --color-forest-deep: #190019; --color-olive: #522b5b;
+  --color-paper: #fbe4d8; --color-card: #fff3ec; --color-chip: #f3d3c8; --color-line: #edcabe; --color-line-strong: #c99a9c;
+  --color-accent: #854f6c; --color-accent-hover: #70405a; --color-on-accent: #ffffff; --color-accent-soft: #f6d5cb;
+  --color-amber: #dfb6b2; --color-amber-hover: #d3a39f; --color-field: #fff8f3; --color-hire: #2f6b34; --color-hire-soft: #e4e6cc;
+}
+[data-theme="harbor"] {     /* Navy, Red & Cream */
+  --color-ink: #0b2231; --color-ink-soft: #4c5d68; --color-forest: #0c324a; --color-forest-deep: #082638; --color-olive: #1d4a66;
+  --color-paper: #fef1d5; --color-card: #fff8e8; --color-chip: #f6e4bd; --color-line: #ecd9ad; --color-line-strong: #cdb780;
+  --color-accent: #c11720; --color-accent-hover: #a3121a; --color-on-accent: #ffffff; --color-accent-soft: #f9d5cf;
+  --color-amber: #8fbbd6; --color-amber-hover: #7aaccb; --color-field: #fffcf3; --color-hire: #2f6b34; --color-hire-soft: #e3ebcb;
+}
+[data-theme="midnight"] {   /* Midnight Blue & Orange */
+  --color-ink: #1e223d; --color-ink-soft: #565a75; --color-forest: #1e223d; --color-forest-deep: #161930; --color-olive: #2b3158;
+  --color-paper: #f7f3ee; --color-card: #ffffff; --color-chip: #e9e6f0; --color-line: #e2deea; --color-line-strong: #b9b5cc;
+  --color-accent: #f54f1b; --color-accent-hover: #e04410; --color-on-accent: #1e223d; --color-accent-soft: #fde0d5;
+  --color-amber: #f54f1b; --color-amber-hover: #e04410; --color-field: #ffffff; --color-hire: #23703f; --color-hire-soft: #dcefe2;
+}
+[data-theme="sunny"] {      /* Teal, Orange & Yellow */
+  --color-ink: #1f2b29; --color-ink-soft: #5d6763; --color-forest: #1f4f4b; --color-forest-deep: #173d3a; --color-olive: #2f7069;
+  --color-paper: #fbf1e4; --color-card: #fffaf2; --color-chip: #f3dcc3; --color-line: #ead2b5; --color-line-strong: #d3b48f;
+  --color-accent: #ec802b; --color-accent-hover: #d96f1c; --color-on-accent: #2a1a08; --color-accent-soft: #fbe3cb;
+  --color-amber: #edc55b; --color-amber-hover: #e2b744; --color-field: #fffdf8; --color-hire: #1f6d5f; --color-hire-soft: #d4ece8;
+}
+[data-theme="cobalt"] {     /* Cobalt & Coral */
+  --color-ink: #0b1c46; --color-ink-soft: #4a5578; --color-forest: #0259dd; --color-forest-deep: #0147b3; --color-olive: #0b3f9e;
+  --color-paper: #fff0ea; --color-card: #ffffff; --color-chip: #ffe1d7; --color-line: #f6cfc3; --color-line-strong: #e3a998;
+  --color-accent: #ff6648; --color-accent-hover: #f25334; --color-on-accent: #1a1230; --color-accent-soft: #ffe1d7;
+  --color-amber: #ffe1d7; --color-amber-hover: #ffd0c1; --color-field: #ffffff; --color-hire: #1f6b3a; --color-hire-soft: #dcefe0;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+h1, h2 { font-family: var(--font-display); letter-spacing: -0.01em; }
+
+.container-page {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 640px) {
+  .container-page { padding-inline: 1.5rem; }
+}
+
+@layer components {
+.btn {
+  display: inline-flex; align-items: center; white-space: nowrap; justify-content: center; gap: .5rem;
+  border-radius: 999px; padding: .7rem 1.25rem; font-weight: 600; font-size: .95rem;
+  transition: background-color .15s, border-color .15s, transform .05s;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--color-forest); color: var(--color-paper); }
+.btn-primary:hover { background: var(--color-forest-deep); }
+.btn-accent { background: var(--color-accent); color: var(--color-on-accent); }
+.btn-accent:hover { background: var(--color-accent-hover); }
+.btn-amber { background: var(--color-amber); color: var(--color-ink); }
+.btn-amber:hover { background: var(--color-amber-hover); }
+.btn-ghost { background: var(--color-card); border: 1px solid var(--color-line-strong); color: var(--color-ink); }
+.btn-ghost:hover { border-color: var(--color-olive); }
+
+.field {
+  width: 100%; border: 1px solid var(--color-line-strong); background: var(--color-field); border-radius: .9rem;
+  padding: .7rem .85rem; font-size: 1rem; color: var(--color-ink);
+}
+.field:focus { outline: 2px solid var(--color-amber); outline-offset: 1px; border-color: transparent; }
+
+/* Hollow "echo" lettering used behind the hero headline. */
+.outline-text {
+  font-family: var(--font-display); font-weight: 700; line-height: .82; text-transform: uppercase;
+  color: transparent; -webkit-text-stroke: 1.5px var(--color-amber); user-select: none;
+}
+}
+
+.prose-legal h2 { font-size: 1.15rem; font-weight: 700; margin: 1.75rem 0 .5rem; }
+.prose-legal p, .prose-legal li { color: var(--color-ink-soft); line-height: 1.7; margin-bottom: .6rem; }
+.prose-legal ul { list-style: disc; padding-left: 1.25rem; }
+
+/* ── Scroll buddy ───────────────────────────────────────────── */
+.buddy-lane { position: fixed; left: 0; right: 0; bottom: 6px; height: 0; z-index: 30; pointer-events: none; }
+.buddy { position: absolute; left: 0; bottom: 0; width: 46px; height: 60px; pointer-events: auto; cursor: pointer;
+  background: none; border: 0; padding: 0; will-change: transform; }
+.buddy svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 3px 3px rgba(0,0,0,.22)); }
+.buddy .leg { transform-box: fill-box; transform-origin: 50% 0; }
+.buddy.walking .leg-a { animation: buddy-step .32s linear infinite; }
+.buddy.walking .leg-b { animation: buddy-step .32s linear infinite reverse; }
+.buddy .eye { transform-box: fill-box; transform-origin: center; animation: buddy-blink 4.2s infinite; }
+.buddy.following { pointer-events: none; cursor: default; }
+.buddy.following .buddy-tip { display: none; }
+.buddy:focus-visible { outline: 2px solid var(--color-amber); outline-offset: 4px; border-radius: 12px; }
+.buddy-tip { position: absolute; bottom: 64px; left: 50%; translate: -50% 0; white-space: nowrap; pointer-events: none;
+  background: var(--color-forest); color: var(--color-paper); font-size: .7rem; font-weight: 600; padding: .25rem .6rem;
+  border-radius: 999px; opacity: 0; transition: opacity .15s; }
+.buddy:hover .buddy-tip, .buddy:focus-visible .buddy-tip { opacity: 1; }
+@keyframes buddy-step { 0% { transform: rotate(24deg); } 50% { transform: rotate(-24deg); } 100% { transform: rotate(24deg); } }
+@keyframes buddy-blink { 0%, 94%, 100% { transform: scaleY(1); } 97% { transform: scaleY(.1); } }
+@media (prefers-reduced-motion: reduce) {
+  .buddy.walking .leg-a, .buddy.walking .leg-b, .buddy .eye { animation: none; }
+}
